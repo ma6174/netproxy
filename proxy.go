@@ -45,7 +45,7 @@ func handleConn(conn net.Conn) {
 func main() {
 	flag.Parse()
 	log.Printf("%s listen at :%s and proxy to %s\n", os.Args[0], *listenAddr, *dstAddr)
-	ln, err := net.Listen("tcp", *listenPort)
+	ln, err := net.Listen("tcp", *listenAddr)
 	if err != nil {
 		log.Fatal(err)
 	}
